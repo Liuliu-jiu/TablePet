@@ -54,7 +54,7 @@ git clone git@github.com:Liuliu-jiu/TablePet.git
 #### 项目构建
 1.打开Qt Creator  
 2.文件->打开文件或项目  
-3.打开的Cmake文件  
+3.打开Cmake文件  
 4.选择mingw编译器  
 5.点击configure Project
 
