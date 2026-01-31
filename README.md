@@ -47,7 +47,10 @@ Qt版本：Qt6.8.3
 ### windows平台
 #### 安装环境
 1.推荐使用Qt官方在线安装器安装Qt creator  
+
 #### 拉取代码
+git clone git@github.com:Liuliu-jiu/TablePet.git  
+
 #### 项目构建
 1.打开Qt Creator  
 2.文件->打开文件或项目  
