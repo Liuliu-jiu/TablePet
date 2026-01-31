@@ -1,0 +1,36 @@
+<RCC>
+    <qresource prefix="/new/Idle">
+        <file>image/cat_Idle/cat_Idle_1.png</file>
+        <file>image/cat_Idle/cat_Idle_2.png</file>
+        <file>image/cat_Idle/cat_Idle_3.png</file>
+        <file>image/cat_Idle/cat_Idle_4.png</file>
+        <file>image/cat_Idle/cat_Idle_5.png</file>
+        <file>image/cat_Idle/cat_Idle_6.png</file>
+        <file>image/cat_Idle/cat_Idle_7.png</file>
+        <file>image/cat_Idle/cat_Idle_8.png</file>
+        <file>image/cat_Idle/cat_Idle_9.png</file>
+        <file>image/cat_Idle/cat_Idle_10.png</file>
+        <file>image/cat_Idle/cat_Idle_11.png</file>
+        <file>image/cat_Idle/cat_Idle_12.png</file>
+    </qresource>
+    <qresource prefix="/new/walk">
+        <file>image/cat_walk/cat_walk_1.png</file>
+        <file>image/cat_walk/cat_walk_2.png</file>
+        <file>image/cat_walk/cat_walk_3.png</file>
+        <file>image/cat_walk/cat_walk_4.png</file>
+        <file>image/cat_walk/cat_walk_5.png</file>
+        <file>image/cat_walk/cat_walk_6.png</file>
+        <file>image/cat_walk/cat_walk_7.png</file>
+        <file>image/cat_walk/cat_walk_8.png</file>
+        <file>image/cat_walk/cat_walk_9.png</file>
+        <file>image/cat_walk/cat_walk_10.png</file>
+    </qresource>
+    <qresource prefix="/new/hurt">
+        <file>image/cat_hurt/cat_hurt_1.png</file>
+        <file>image/cat_hurt/cat_hurt_2.png</file>
+        <file>image/cat_hurt/cat_hurt_3.png</file>
+        <file>image/cat_hurt/cat_hurt_4.png</file>
+        <file>image/cat_hurt/cat_hurt_5.png</file>
+        <file>image/cat_hurt/cat_hurt_6.png</file>
+    </qresource>
+</RCC>
