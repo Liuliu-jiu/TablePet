@@ -47,6 +47,9 @@
 ### 3.5 关闭
 关闭桌面宠物程序
 
+# 视频演示链接
+https://www.bilibili.com/video/BV1nhAgzXERx/?vd_source=e013ddf90415527cef0064659bfd6de5
+
 # 常见问题
 ## Q.支持哪个平台
 A.支持windows和linux平台
@@ -102,9 +105,6 @@ git clone git@github.com:Liuliu-jiu/TablePet.git
 1.打开Qt Creator  
 2.文件->打开文件或项目  
 3.打开Cmake文件
-
-# 视频演示链接
-https://www.bilibili.com/video/BV1nhAgzXERx/?vd_source=e013ddf90415527cef0064659bfd6de5
 
 # 特此说明
 如出现无法使用的情况，请将bug现象通过issue反馈给作者
