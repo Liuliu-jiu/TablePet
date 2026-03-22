@@ -18,6 +18,18 @@ set(PROJECT_SOURCES
 
 
 )
+# 设置图标路径（指向ICO文件）
+set(APP_ICON_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cat_Idle.ico")
+
+# Windows图标设置
+if(WIN32)
+    # 创建RC文件
+    file(WRITE "${CMAKE_CURRENT_BINARY_DIR}/app_icon.rc"
+        "IDI_ICON1 ICON DISCARDABLE \"${APP_ICON_PATH}\""
+    )
+    # 将RC文件添加到源文件列表
+    list(APPEND PROJECT_SOURCES "${CMAKE_CURRENT_BINARY_DIR}/app_icon.rc")
+endif()
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
     qt_add_executable(TablePet2
@@ -33,11 +45,16 @@ if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
         mainwidget.h mainwidget.cpp mainwidget.ui
         setwindow.h setwindow.cpp setwindow.ui
         statemanagement.h statemanagement.cpp
-        database.h database.cpp
+
         preload.h preload.cpp
         showfontwindow.h showfontwindow.cpp showfontwindow.ui
 
         performancewindow.h performancewindow.cpp performancewindow.ui
+
+
+        configfile.h configfile.cpp
+        custommodelwindow.h custommodelwindow.cpp custommodelwindow.ui
+
     )
 # Define target properties for Android with Qt 6 as:
 #    set_property(TARGET TablePet2 APPEND PROPERTY QT_ANDROID_PACKAGE_SOURCE_DIR
