@@ -1,0 +1,14 @@
+{
+    "idleFrequency": 90,
+    "isAutoStart": 0,
+    "isCreateShortcut": 0,
+    "originalDirection": "右",
+    "originalGeneratedPosition": {
+        "x": 0,
+        "y": 0
+    },
+    "originalStatus": "站立",
+    "specialStatusFrequency": 230,
+    "userSelectedModelName": "光之女皇",
+    "walkFrequency": 80
+}

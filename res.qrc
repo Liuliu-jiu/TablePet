@@ -1,36 +1,92 @@
 <RCC>
-    <qresource prefix="/new/Idle">
-        <file>image/cat_Idle/cat_Idle_1.png</file>
-        <file>image/cat_Idle/cat_Idle_2.png</file>
-        <file>image/cat_Idle/cat_Idle_3.png</file>
-        <file>image/cat_Idle/cat_Idle_4.png</file>
-        <file>image/cat_Idle/cat_Idle_5.png</file>
-        <file>image/cat_Idle/cat_Idle_6.png</file>
-        <file>image/cat_Idle/cat_Idle_7.png</file>
-        <file>image/cat_Idle/cat_Idle_8.png</file>
-        <file>image/cat_Idle/cat_Idle_9.png</file>
-        <file>image/cat_Idle/cat_Idle_10.png</file>
-        <file>image/cat_Idle/cat_Idle_11.png</file>
-        <file>image/cat_Idle/cat_Idle_12.png</file>
+    <qresource prefix="/cat">
+        <file>image/cat/hurt/1.png</file>
+        <file>image/cat/hurt/2.png</file>
+        <file>image/cat/hurt/3.png</file>
+        <file>image/cat/hurt/4.png</file>
+        <file>image/cat/hurt/5.png</file>
+        <file>image/cat/hurt/6.png</file>
+        <file>image/cat/Idle/1.png</file>
+        <file>image/cat/Idle/2.png</file>
+        <file>image/cat/Idle/3.png</file>
+        <file>image/cat/Idle/4.png</file>
+        <file>image/cat/Idle/5.png</file>
+        <file>image/cat/Idle/6.png</file>
+        <file>image/cat/Idle/7.png</file>
+        <file>image/cat/Idle/8.png</file>
+        <file>image/cat/Idle/9.png</file>
+        <file>image/cat/Idle/10.png</file>
+        <file>image/cat/Idle/11.png</file>
+        <file>image/cat/Idle/12.png</file>
+        <file>image/cat/walk/1.png</file>
+        <file>image/cat/walk/2.png</file>
+        <file>image/cat/walk/3.png</file>
+        <file>image/cat/walk/4.png</file>
+        <file>image/cat/walk/5.png</file>
+        <file>image/cat/walk/6.png</file>
+        <file>image/cat/walk/7.png</file>
+        <file>image/cat/walk/8.png</file>
+        <file>image/cat/walk/9.png</file>
+        <file>image/cat/walk/10.png</file>
     </qresource>
-    <qresource prefix="/new/walk">
-        <file>image/cat_walk/cat_walk_1.png</file>
-        <file>image/cat_walk/cat_walk_2.png</file>
-        <file>image/cat_walk/cat_walk_3.png</file>
-        <file>image/cat_walk/cat_walk_4.png</file>
-        <file>image/cat_walk/cat_walk_5.png</file>
-        <file>image/cat_walk/cat_walk_6.png</file>
-        <file>image/cat_walk/cat_walk_7.png</file>
-        <file>image/cat_walk/cat_walk_8.png</file>
-        <file>image/cat_walk/cat_walk_9.png</file>
-        <file>image/cat_walk/cat_walk_10.png</file>
+    <qresource prefix="/skeletonsoldier">
+        <file>image/skeletonsoldier/appear/1.png</file>
+        <file>image/skeletonsoldier/appear/2.png</file>
+        <file>image/skeletonsoldier/appear/3.png</file>
+        <file>image/skeletonsoldier/appear/4.png</file>
+        <file>image/skeletonsoldier/appear/5.png</file>
+        <file>image/skeletonsoldier/appear/6.png</file>
+        <file>image/skeletonsoldier/appear/7.png</file>
+        <file>image/skeletonsoldier/appear/8.png</file>
+        <file>image/skeletonsoldier/appear/9.png</file>
+        <file>image/skeletonsoldier/appear/10.png</file>
+        <file>image/skeletonsoldier/attack/1.png</file>
+        <file>image/skeletonsoldier/attack/2.png</file>
+        <file>image/skeletonsoldier/attack/3.png</file>
+        <file>image/skeletonsoldier/attack/4.png</file>
+        <file>image/skeletonsoldier/attack/5.png</file>
+        <file>image/skeletonsoldier/attack/6.png</file>
+        <file>image/skeletonsoldier/attack/7.png</file>
+        <file>image/skeletonsoldier/attack/8.png</file>
+        <file>image/skeletonsoldier/die/1.png</file>
+        <file>image/skeletonsoldier/die/2.png</file>
+        <file>image/skeletonsoldier/die/3.png</file>
+        <file>image/skeletonsoldier/die/4.png</file>
+        <file>image/skeletonsoldier/die/5.png</file>
+        <file>image/skeletonsoldier/die/6.png</file>
+        <file>image/skeletonsoldier/die/7.png</file>
+        <file>image/skeletonsoldier/die/8.png</file>
+        <file>image/skeletonsoldier/idle/1.png</file>
+        <file>image/skeletonsoldier/idle/2.png</file>
+        <file>image/skeletonsoldier/idle/3.png</file>
+        <file>image/skeletonsoldier/idle/4.png</file>
+        <file>image/skeletonsoldier/idle/5.png</file>
+        <file>image/skeletonsoldier/idle/6.png</file>
+        <file>image/skeletonsoldier/walk/1.png</file>
+        <file>image/skeletonsoldier/walk/2.png</file>
+        <file>image/skeletonsoldier/walk/3.png</file>
+        <file>image/skeletonsoldier/walk/4.png</file>
+        <file>image/skeletonsoldier/walk/5.png</file>
+        <file>image/skeletonsoldier/walk/6.png</file>
+        <file>image/skeletonsoldier/walk/7.png</file>
+        <file>image/skeletonsoldier/walk/8.png</file>
     </qresource>
-    <qresource prefix="/new/hurt">
-        <file>image/cat_hurt/cat_hurt_1.png</file>
-        <file>image/cat_hurt/cat_hurt_2.png</file>
-        <file>image/cat_hurt/cat_hurt_3.png</file>
-        <file>image/cat_hurt/cat_hurt_4.png</file>
-        <file>image/cat_hurt/cat_hurt_5.png</file>
-        <file>image/cat_hurt/cat_hurt_6.png</file>
+    <qresource prefix="/monster_sprite">
+        <file>image/monster_sprite/idle/1.png</file>
+        <file>image/monster_sprite/idle/2.png</file>
+        <file>image/monster_sprite/idle/3.png</file>
+        <file>image/monster_sprite/idle/4.png</file>
+        <file>image/monster_sprite/idle/5.png</file>
+        <file>image/monster_sprite/idle/6.png</file>
+        <file>image/monster_sprite/idle/7.png</file>
+        <file>image/monster_sprite/idle/8.png</file>
+        <file>image/monster_sprite/walk/1.png</file>
+        <file>image/monster_sprite/walk/2.png</file>
+        <file>image/monster_sprite/walk/3.png</file>
+        <file>image/monster_sprite/walk/4.png</file>
+        <file>image/monster_sprite/walk/5.png</file>
+        <file>image/monster_sprite/walk/6.png</file>
+        <file>image/monster_sprite/walk/7.png</file>
+        <file>image/monster_sprite/walk/8.png</file>
     </qresource>
 </RCC>

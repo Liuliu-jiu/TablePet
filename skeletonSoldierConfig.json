@@ -1,0 +1,37 @@
+{
+    "width" : 240,
+    "height" : 364,
+    "modelName" : "骷髅士兵",
+    "previewImagePath" : ":/skeletonsoldier/image/skeletonsoldier/idle/1.png",
+    "walkImagePath" : [
+        ":/skeletonsoldier/image/skeletonsoldier/walk/1.png",
+        ":/skeletonsoldier/image/skeletonsoldier/walk/2.png",
+        ":/skeletonsoldier/image/skeletonsoldier/walk/3.png",
+        ":/skeletonsoldier/image/skeletonsoldier/walk/4.png",
+        ":/skeletonsoldier/image/skeletonsoldier/walk/5.png",
+        ":/skeletonsoldier/image/skeletonsoldier/walk/6.png",
+        ":/skeletonsoldier/image/skeletonsoldier/walk/7.png",
+        ":/skeletonsoldier/image/skeletonsoldier/walk/8.png"
+    ],
+    "idleImagePath" : [
+        ":/skeletonsoldier/image/skeletonsoldier/idle/1.png",
+        ":/skeletonsoldier/image/skeletonsoldier/idle/2.png",
+        ":/skeletonsoldier/image/skeletonsoldier/idle/3.png",
+        ":/skeletonsoldier/image/skeletonsoldier/idle/4.png",
+        ":/skeletonsoldier/image/skeletonsoldier/idle/5.png",
+        ":/skeletonsoldier/image/skeletonsoldier/idle/6.png"
+    ],
+     "specialStatus" : {
+        "specialStatusName" : "攻击",
+        "specialStatusImagePath" : [
+        ":/skeletonsoldier/image/skeletonsoldier/attack/1.png",
+        ":/skeletonsoldier/image/skeletonsoldier/attack/2.png",
+        ":/skeletonsoldier/image/skeletonsoldier/attack/3.png",
+        ":/skeletonsoldier/image/skeletonsoldier/attack/4.png",
+        ":/skeletonsoldier/image/skeletonsoldier/attack/5.png",
+        ":/skeletonsoldier/image/skeletonsoldier/attack/6.png",
+        ":/skeletonsoldier/image/skeletonsoldier/attack/7.png",
+        ":/skeletonsoldier/image/skeletonsoldier/attack/8.png"
+        ]
+    }
+}

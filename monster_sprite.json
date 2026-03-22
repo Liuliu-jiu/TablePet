@@ -1,0 +1,26 @@
+{
+    "width" : 191,
+    "height" : 208,
+    "modelName" : "怪物精灵",
+    "previewImagePath" : ":/monster_sprite/image/monster_sprite/idle/1.png",
+    "walkImagePath" : [
+        ":/monster_sprite/image/monster_sprite/walk/1.png",
+        ":/monster_sprite/image/monster_sprite/walk/2.png",
+        ":/monster_sprite/image/monster_sprite/walk/3.png",
+        ":/monster_sprite/image/monster_sprite/walk/4.png",
+        ":/monster_sprite/image/monster_sprite/walk/5.png",
+        ":/monster_sprite/image/monster_sprite/walk/6.png",
+        ":/monster_sprite/image/monster_sprite/walk/7.png",
+        ":/monster_sprite/image/monster_sprite/walk/8.png"
+    ],
+    "idleImagePath" : [
+        ":/monster_sprite/image/monster_sprite/idle/1.png",
+        ":/monster_sprite/image/monster_sprite/idle/2.png",
+        ":/monster_sprite/image/monster_sprite/idle/3.png",
+        ":/monster_sprite/image/monster_sprite/idle/4.png",
+        ":/monster_sprite/image/monster_sprite/idle/5.png",
+        ":/monster_sprite/image/monster_sprite/idle/6.png",
+        ":/monster_sprite/image/monster_sprite/idle/7.png",
+        ":/monster_sprite/image/monster_sprite/idle/8.png"
+    ]
+}

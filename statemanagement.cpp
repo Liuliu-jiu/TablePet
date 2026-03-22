@@ -9,7 +9,7 @@ StateManagement::StateManagement(QObject *parent)
 void StateManagement::walk(int time)
 {
     this->IdleTimer.stop();
-    this->hurtTimer.stop();
+    this->specialStatusTimer.stop();
     this->walkTimer.start(time);    //开启行走定时器
 }
 void StateManagement::idle(int time)
@@ -17,40 +17,21 @@ void StateManagement::idle(int time)
     this->walkTimer.stop();
     this->IdleTimer.start(time);    //开启站立定时器
 }
-void StateManagement::hurt(int time)
+void StateManagement::specialStatus(int time)
 {
     this->walkTimer.stop();
-    this->hurtTimer.start(time);    //开启受伤定时器
-}
-int StateManagement::getCatIdlePixmapCount()
-{
-    return CAT_IDLE_PIXMAP_COUNT;   //返回小猫站立图片的总数
-}
-int StateManagement::getCatWalkPixmapCount()
-{
-    return CAT_WALK_PIXMAP_COUNT;   //返回小猫行走图片的总数
-}
-int StateManagement::getCatHurtPixmapCount()
-{
-    return CAT_HURT_PIXMAP_COUNT;   //返回小猫受伤图片的总数
-}
-QString StateManagement::getCatIdlePixmapPathPrefix()
-{
-    return CAT_IDLE_PATH_PREFIX;    //返回小猫站立图片路径的前缀
-}
-QString StateManagement::getCatWalkPixmapPathPrefix()
-{
-    return CAT_WALK_PATH_PREFIX;    //返回小猫行走图片路径的前缀
-}
-QString StateManagement::getCatHurtPixmapPathPrefix()
-{
-    return CAT_HURT_PIXMAP_PREFIX;  //返回小猫受伤图片路径的前缀
+    this->specialStatusTimer.start(time);    //开启受伤定时器
 }
 void StateManagement::initConnect()
 {
-    connect(&this->walkTimer,&QTimer::timeout,this,&StateManagement::responseWalk); //连接行走定时器timeout信号
-    connect(&this->IdleTimer,&QTimer::timeout,this,&StateManagement::responseIdle); //连接站立定时器timeout信号
-    connect(&this->hurtTimer,&QTimer::timeout,this,&StateManagement::responsehurt); //连接受伤定时器timeout信号
+    connect(&this->walkTimer,&QTimer::timeout,this,&StateManagement::responseWalk);                  //连接行走定时器timeout信号
+    connect(&this->IdleTimer,&QTimer::timeout,this,&StateManagement::responseIdle);                  //连接站立定时器timeout信号
+    connect(&this->specialStatusTimer,&QTimer::timeout,this,&StateManagement::responseSpecialStatus);//连接受伤定时器timeout信号
+
+    //请求更新方向
+    connect(this,&StateManagement::requestUpdateDirection,this,[=](bool isRight){
+        this->isRight = isRight;
+    });
 }
 void StateManagement::initVariable()
 {
@@ -59,41 +40,47 @@ void StateManagement::initVariable()
     this->mainScreenSize = QGuiApplication::primaryScreen()->size();    //获取主屏幕大小
     this->logSystemPtr = LogSystem::getLogSystemObject();               //获取日志系统对象
     this->isShouldHurt = false;                                         //一开始不应该受伤
+    this->preloadPtr = Preload::getPreloadObject();                     //获取预加载类对象指针
 }
 void StateManagement::responseWalk()
 {
     //切换行走图片
-    static int currentWalkCount = 1;    //决定切换至哪张图片
-    decideAndSendPixmapPath(CAT_WALK_PATH_PREFIX,currentWalkCount,CAT_WALK_PIXMAP_COUNT);
+    static int currentWalkCount = 0;    //决定切换至哪张图片
+    decideAndSendPixmapPath(this->preloadPtr->getImageAndPathHash("walkImagePath",this->isRight),currentWalkCount);
     move(MOVE_PIXEL);
 }
 void StateManagement::responseIdle()
 {
     //切换站立呼吸图片
     static int currentIdleCount = 1;    //决定切换至哪张图片
-    decideAndSendPixmapPath(CAT_IDLE_PATH_PREFIX,currentIdleCount,CAT_IDLE_PIXMAP_COUNT);
+    decideAndSendPixmapPath(this->preloadPtr->getImageAndPathHash("idleImagePath",this->isRight),currentIdleCount);
 }
-void StateManagement::responsehurt()
+void StateManagement::responseSpecialStatus()
 {
-    static int currentHurtCount = 1;
-    static int currentSwitchTime = 0;                   //记录响应timeout的次数
-    decideAndSendPixmapPath(CAT_HURT_PIXMAP_PREFIX,currentHurtCount,CAT_HURT_PIXMAP_COUNT);
-    if(++currentSwitchTime >= CAT_HURT_PIXMAP_COUNT){   //当完整播放一遍后，重新切换为行走状态
-        currentSwitchTime = 0;                          //重新初始化为1，下次次数将从1开始
-        this->isShouldHurt = false;                     //碰壁受伤过后，就不能重复受伤
-        this->isRight = !(this->isRight);               //下次移动时进行反弹
-        emit requestUpdateDirection(this->isRight);     //请求更新方向状态
-        this->walk(80);
+    static int currentSpecialStatusCount = 0;
+    static int currentSpecialStatusSwitchTime = 0;               //记录响应timeout的次数
+    decideAndSendPixmapPath(this->preloadPtr->getImageAndPathHash("specialStatusImage",this->isRight),currentSpecialStatusCount);
+    qDebug() << "currentSpecialStatusCount" << currentSpecialStatusCount;
+    ++currentSpecialStatusSwitchTime;
+    qDebug() << "currentSpecialStatusSwitchTime ：" << currentSpecialStatusSwitchTime;
+    if(currentSpecialStatusSwitchTime >= this->preloadPtr->getImageAndPathHash("specialStatusImage",this->isRight).count()){   //当完整播放一遍后，重新切换为行走状态
+        currentSpecialStatusSwitchTime = 0;                      //重新初始化为1，下次次数将从1开始
+        this->isShouldHurt = false;                              //碰壁受伤过后，就不能重复受伤
+        this->isRight = !(this->isRight);                        //下次移动时进行反弹
+        int walkFrequency = configFile.readConfigValue(APP_CONFIG_JSON_FILE,"walkFrequency").toInt();
+        this->walk(walkFrequency);
     }
 }
-void StateManagement::decideAndSendPixmapPath(QString pathPrefix,int& currentIndex,int pixmalTotal)
+bool StateManagement::decideAndSendPixmapPath(QHash<int,QPixmap> hash,int& currentIndex)
 {
-    //用于决定切换的图片路径，并通过信号发送至主窗口处设置
-    QString pixmapPath = QString(pathPrefix).arg(currentIndex);
-    if(++currentIndex > pixmalTotal){          //判断是否超出图片数
-        currentIndex = 1;
+    //qDebug() << "图片索引：" << currentIndex;
+    emit this->requestSwitchImage(hash.value(currentIndex++));//然后发送找到pixmap对象并发送至从主窗口处设置
+    //如果索引超出了最大图片数，那么重新初始化为0
+    if(currentIndex >= hash.size()){
+        currentIndex = 0;
+        return true;            //表示状态已经播放完了一遍
     }
-    emit requestSwitchImage(pixmapPath);       //通过信号传递要切换图片的路径
+    return false;
 }
 void StateManagement::move(int moveX)
 {
@@ -133,9 +120,9 @@ void StateManagement::move(int moveX)
             emit requestUpdateDirection(this->isRight);//请求更新方向状态
         }
     }
-    emit requestSetWindowPos(windowPos);                //确定坐标后发送过去进行设置
+    emit requestSetWindowPos(windowPos);               //确定坐标后发送过去进行设置
     if(this->isShouldHurt){
-        this->hurt(230);
+        this->specialStatus(configFile.readConfigValue(APP_CONFIG_JSON_FILE,"specialStatusFrequency").toInt());
         showFontWindow.showText("hp - 1",emit requestGetWindowPos(),QColor(237,28,36));
     }
 }

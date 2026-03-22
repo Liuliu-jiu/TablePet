@@ -45,8 +45,8 @@ void ShowFontWindow::showText(QString text,QPoint pos,QColor textColor)
 }
 void ShowFontWindow::initWindowAttribute()
 {
-    this->setAttribute(Qt::WA_TranslucentBackground);                           //设置透明背景
-    this->setWindowFlags(Qt::FramelessWindowHint | Qt::WindowStaysOnTopHint);   //设置隐藏标题栏和边框并且使得窗口一直置于顶层
+    this->setAttribute(Qt::WA_TranslucentBackground);                        //设置透明背景
+    this->setWindowFlags(Qt::FramelessWindowHint | Qt::WindowStaysOnTopHint);//设置隐藏标题栏和边框并且使得窗口一直置于顶层
 }
 void ShowFontWindow::initVariable()
 {

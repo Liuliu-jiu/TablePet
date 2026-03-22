@@ -1,0 +1,43 @@
+{
+    "width" :  140,
+    "height" : 160,
+    "modelName" : "小猫",
+    "previewImagePath" : ":/cat/image/cat/Idle/1.png",
+    "walkImagePath" : [
+        ":/cat/image/cat/walk/1.png",
+        ":/cat/image/cat/walk/2.png",
+        ":/cat/image/cat/walk/3.png",
+        ":/cat/image/cat/walk/4.png",
+        ":/cat/image/cat/walk/5.png",
+        ":/cat/image/cat/walk/6.png",
+        ":/cat/image/cat/walk/7.png",
+        ":/cat/image/cat/walk/8.png",
+        ":/cat/image/cat/walk/9.png",
+        ":/cat/image/cat/walk/10.png"
+    ],
+    "idleImagePath" : [
+        ":/cat/image/cat/Idle/1.png",
+        ":/cat/image/cat/Idle/2.png",
+        ":/cat/image/cat/Idle/3.png",
+        ":/cat/image/cat/Idle/4.png",
+        ":/cat/image/cat/Idle/5.png",
+        ":/cat/image/cat/Idle/6.png",
+        ":/cat/image/cat/Idle/7.png",
+        ":/cat/image/cat/Idle/8.png",
+        ":/cat/image/cat/Idle/9.png",
+        ":/cat/image/cat/Idle/10.png",
+        ":/cat/image/cat/Idle/11.png",
+        ":/cat/image/cat/Idle/12.png"
+    ],
+    "specialStatus" : {
+        "specialStatusName" : "行走碰壁触发受伤",
+        "specialStatusImagePath" : [
+        ":/cat/image/cat/hurt/1.png",
+        ":/cat/image/cat/hurt/2.png",
+        ":/cat/image/cat/hurt/3.png",
+        ":/cat/image/cat/hurt/4.png",
+        ":/cat/image/cat/hurt/5.png",
+        ":/cat/image/cat/hurt/6.png"
+        ]
+    }
+}
